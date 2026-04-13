@@ -7,23 +7,14 @@ const BackToTop = () => {
 
     useEffect(() => {
         const toggleVisibility = () => {
-            if (window.pageYOffset > 300) {
-                setIsVisible(true);
-            } else {
-                setIsVisible(false);
-            }
+            setIsVisible(window.pageYOffset > 300);
         };
-
-        window.addEventListener('scroll', toggleVisibility);
-
+        window.addEventListener('scroll', toggleVisibility, { passive: true });
         return () => window.removeEventListener('scroll', toggleVisibility);
     }, []);
 
     const scrollToTop = () => {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth',
-        });
+        window.scrollTo({ top: 0, behavior: 'smooth' });
     };
 
     return (
@@ -33,13 +24,13 @@ const BackToTop = () => {
                     initial={{ opacity: 0, scale: 0.5, y: 100 }}
                     animate={{ opacity: 1, scale: 1, y: 0 }}
                     exit={{ opacity: 0, scale: 0.5, y: 100 }}
-                    whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.9 }}
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
                     onClick={scrollToTop}
-                    className="fixed bottom-8 right-8 z-50 w-12 h-12 rounded-full bg-gradient-to-br from-[var(--primary)] to-[var(--accent)] flex items-center justify-center shadow-lg shadow-[var(--glow)] hover:shadow-2xl hover:shadow-[var(--glow)] transition-all"
+                    className="fixed bottom-8 right-8 z-50 w-11 h-11 rounded-full bg-blue-600 flex items-center justify-center shadow-md hover:bg-blue-700 hover:shadow-lg"
                     aria-label="Back to top"
                 >
-                    <FaArrowUp className="text-black text-lg" />
+                    <FaArrowUp className="text-white text-base" />
                 </motion.button>
             )}
         </AnimatePresence>

@@ -1,29 +1,12 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
-use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
 Route::get('/', function () {
     return Inertia::render('Home');
 })->name('home');
-
-Route::get('/about', function () {
-    return Inertia::render('About');
-})->name('about');
-
-Route::get('/portfolio', function () {
-    return Inertia::render('Portfolio');
-})->name('portfolio');
-
-Route::get('/services', function () {
-    return Inertia::render('Services');
-})->name('services');
-
-Route::get('/contact', function () {
-    return Inertia::render('Contact');
-})->name('contact');
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
