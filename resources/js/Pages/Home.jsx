@@ -266,7 +266,7 @@ const Home = () => {
                                     transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
                                     className="w-full max-w-sm"
                                 >
-                                    <div className="card shadow-2xl rounded-2xl overflow-hidden p-0">
+                                    <div className="card shadow-2xl rounded-2xl overflow-hidden p-0 mt-8">
                                         {/* Browser bar */}
                                         <div className="bg-slate-100 px-4 py-3 flex items-center gap-2 border-b border-slate-200">
                                             <div className="w-3 h-3 rounded-full bg-red-400" />
