@@ -21,6 +21,7 @@ const projects = [
         id: 5,
         title: 'GBGold',
         category: 'Web',
+        image: '/project-ss/gbgold.png',
         description: 'Digital and physical gold trading platform with MLM system, eKYC verification, and multiple payment gateways.',
         tech: ['Laravel', 'Livewire', 'MySQL', 'Redis'],
         demoUrl: 'https://gbgold.my',
@@ -30,6 +31,7 @@ const projects = [
         id: 6,
         title: 'DekreatifAI',
         category: 'Web',
+        image: '/project-ss/dekreatifai.png',
         description: 'A marketplace platform for buying and selling AI prompts with integrated payment and digital content management.',
         tech: ['Laravel', 'React', 'Inertia.js', 'Tailwind CSS'],
         demoUrl: 'https://dekreatifai.com',
@@ -39,6 +41,7 @@ const projects = [
         id: 7,
         title: 'KreatifAgent',
         category: 'Web',
+        image: '/project-ss/kreatifagent.png',
         description: 'An AI-powered platform for generating images and videos with a simple and intuitive interface.',
         tech: ['Laravel', 'React', 'AI API', 'Tailwind CSS'],
         demoUrl: 'https://kreatifagent.com',
@@ -48,6 +51,7 @@ const projects = [
         id: 8,
         title: 'KUJDT CRM',
         category: 'Web',
+        image: '/project-ss/kujdt-crm.png',
         description: 'A CRM system for managing Umrah pilgrims — lead tracking, WhatsApp communications, and reporting.',
         tech: ['Laravel', 'Bootstrap', 'MySQL', 'WhatsApp API'],
         demoUrl: null,
@@ -66,6 +70,7 @@ const projects = [
         id: 2,
         title: 'WWC Ticket Event - Warzone',
         category: 'Web',
+        image: '/project-ss/warzone.png',
         description: 'A ticketing platform for gaming events with payment integration and real-time seat availability.',
         tech: ['Next.js', 'Stripe', 'PostgreSQL'],
         demoUrl: 'https://wwcticket.com/',
@@ -352,8 +357,12 @@ const Home = () => {
                                     className="card flex flex-col p-6 group"
                                 >
                                     {/* Preview block */}
-                                    <div className="h-36 rounded-xl bg-slate-50 border border-slate-100 mb-5 flex items-center justify-center">
-                                        <span className="text-slate-300 text-sm">Preview</span>
+                                    <div className="h-36 rounded-xl bg-slate-50 border border-slate-100 mb-5 overflow-hidden flex items-center justify-center">
+                                        {project.image ? (
+                                            <img src={project.image} alt={project.title} className="w-full h-full object-cover" />
+                                        ) : (
+                                            <span className="text-slate-300 text-sm">Preview</span>
+                                        )}
                                     </div>
 
                                     <span className="badge badge-blue mb-2 self-start">{project.category}</span>
