@@ -10,9 +10,9 @@ import {
     FaGithub, FaLinkedin, FaTwitter, FaEnvelope,
     FaPhone, FaMapMarkerAlt, FaExternalLinkAlt,
     FaPaintBrush, FaServer, FaReact, FaNodeJs,
-    FaPython, FaGitAlt,
+    FaPython,
 } from 'react-icons/fa';
-import { SiNextdotjs, SiTailwindcss, SiMongodb, SiTypescript } from 'react-icons/si';
+import { SiNextdotjs, SiTailwindcss, SiTypescript, SiDart, SiPhp } from 'react-icons/si';
 
 // ─── Data ────────────────────────────────────────────────────────────────────
 
@@ -113,8 +113,8 @@ const skills = [
     { name: 'Node.js', icon: FaNodeJs, level: 85 },
     { name: 'Python', icon: FaPython, level: 75 },
     { name: 'Tailwind CSS', icon: SiTailwindcss, level: 95 },
-    { name: 'MongoDB', icon: SiMongodb, level: 80 },
-    { name: 'Git', icon: FaGitAlt, level: 90 },
+    { name: 'Dart', icon: SiDart, level: 80 },
+    { name: 'PHP', icon: SiPhp, level: 90 },
 ];
 
 const services = [
@@ -232,7 +232,7 @@ const Home = () => {
                                     transition={{ delay: 0.5, duration: 0.5 }}
                                     className="text-slate-500 text-base sm:text-lg leading-relaxed max-w-lg mx-auto lg:mx-0 mb-6"
                                 >
-                                    I'm passionate about crafting digital experiences that merge design, functionality, and innovation — from web and mobile apps to AI-driven solutions.
+                                    My expertise is helping entrepreneurs build responsive websites for both web and mobile. I also specialize in building AI Automation using various types of the latest AI models.
                                 </motion.p>
 
                                 {/* Role badges */}
@@ -274,12 +274,12 @@ const Home = () => {
                                 initial={{ opacity: 0, scale: 0.9 }}
                                 animate={{ opacity: 1, scale: 1 }}
                                 transition={{ delay: 0.3, duration: 0.6 }}
-                                className="order-1 lg:order-2 flex justify-center"
+                                className="order-1 lg:order-2 flex justify-center lg:justify-end mt-10 lg:mt-0"
                             >
                                 <motion.div
                                     animate={{ y: [0, -12, 0] }}
                                     transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
-                                    className="w-full max-w-sm"
+                                    className="w-full max-w-md"
                                 >
                                     <div className="card shadow-2xl rounded-2xl overflow-hidden p-0 mt-8">
                                         {/* Browser bar */}
@@ -297,15 +297,15 @@ const Home = () => {
                                             <div className="h-3 bg-slate-100 rounded-full w-1/2" />
                                             <div className="grid grid-cols-2 gap-3 pt-2">
                                                 <div className="h-20 bg-blue-50 rounded-xl flex flex-col items-center justify-center gap-1">
-                                                    <span className="text-blue-600 font-bold text-2xl">4+</span>
+                                                    <span className="text-blue-600 font-bold text-2xl">9+</span>
                                                     <span className="text-blue-400 text-xs">Projects</span>
                                                 </div>
                                                 <div className="h-20 bg-slate-50 rounded-xl flex flex-col items-center justify-center gap-1 border border-slate-100">
-                                                    <span className="text-slate-700 font-bold text-2xl">2yr</span>
+                                                    <span className="text-slate-700 font-bold text-2xl">9yr</span>
                                                     <span className="text-slate-400 text-xs">Experience</span>
                                                 </div>
                                             </div>
-                                            <div className="flex gap-2 pt-1 flex-wrap">
+                                            <div className="flex gap-2 pt-1 flex-wrap justify-center">
                                                 <span className="badge badge-blue text-xs">React</span>
                                                 <span className="px-3 py-1 bg-slate-100 text-slate-600 rounded-full text-xs font-medium">Next.js</span>
                                                 <span className="px-3 py-1 bg-slate-100 text-slate-600 rounded-full text-xs font-medium">Python</span>
@@ -393,7 +393,7 @@ const Home = () => {
                                         ))}
                                     </div>
 
-                                    <div className="flex gap-3 mt-auto">
+                                    <div className="flex gap-3 mt-auto justify-end">
                                         {project.demoUrl ? (
                                             <a
                                                 href={project.demoUrl}
@@ -469,10 +469,10 @@ const Home = () => {
                                 initial={{ opacity: 0, y: 30 }}
                                 animate={aboutInView ? { opacity: 1, y: 0 } : {}}
                                 transition={{ delay: 0.1, duration: 0.5 }}
-                                className="p-8 h-full flex flex-col justify-center"
+                                className="py-8 lg:p-8 h-full flex flex-col justify-center"
                             >
-                                <h3 className="text-6xl font-bold text-slate-900 mb-4">Who I Am</h3>
-                                <p className="text-slate-600 text-base leading-relaxed">
+                                <h3 className="text-5xl lg:text-6xl font-bold text-slate-900 mb-4">Who Am I</h3>
+                                <p className="text-slate-600 text-base leading-relaxed text-justify lg:text-left">
                                     I'm a passionate developer who loves turning ideas into powerful digital experiences. My focus lies in building fast, scalable, and visually engaging applications — whether for the web or mobile. With a strong foundation in both front-end and back-end development, I bridge creativity and technology to deliver seamless user experiences.
                                 </p>
                             </motion.div>
