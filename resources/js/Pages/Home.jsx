@@ -18,6 +18,16 @@ import { SiNextdotjs, SiTailwindcss, SiMongodb, SiTypescript } from 'react-icons
 
 const projects = [
     {
+        id: 9,
+        title: 'HelloMicrobes',
+        category: 'Web & AI',
+        image: '/project-ss/Immunology.png',
+        description: 'An AI-driven platform exploring the world of microbes with interactive content and intelligent features.',
+        tech: ['Web', 'AI'],
+        demoUrl: 'http://hellomicrobes.com/',
+        githubUrl: null,
+    },
+    {
         id: 5,
         title: 'GBGold',
         category: 'Web',
@@ -58,15 +68,6 @@ const projects = [
         githubUrl: null,
     },
     {
-        id: 1,
-        title: 'Stock Inventory - MG Global Sdn Bhd',
-        category: 'Web',
-        description: 'A comprehensive stock inventory management system for tracking products, suppliers, and stock levels in real-time.',
-        tech: ['Next.js', 'MongoDB', 'Node.js'],
-        demoUrl: null,
-        githubUrl: null,
-    },
-    {
         id: 2,
         title: 'WWC Ticket Event - Warzone',
         category: 'Web',
@@ -74,6 +75,15 @@ const projects = [
         description: 'A ticketing platform for gaming events with payment integration and real-time seat availability.',
         tech: ['Next.js', 'Stripe', 'PostgreSQL'],
         demoUrl: 'https://wwcticket.com/',
+        githubUrl: null,
+    },
+    {
+        id: 1,
+        title: 'Stock Inventory - MG Global Sdn Bhd',
+        category: 'Web',
+        description: 'A comprehensive stock inventory management system for tracking products, suppliers, and stock levels in real-time.',
+        tech: ['Next.js', 'MongoDB', 'Node.js'],
+        demoUrl: null,
         githubUrl: null,
     },
     {
@@ -175,7 +185,7 @@ const Home = () => {
     const [servicesRef, servicesInView] = useInView({ triggerOnce: true, threshold: 0.05 });
     const [contactRef, contactInView] = useInView({ triggerOnce: true, threshold: 0.1 });
 
-    const filtered = projects.filter(p => activeFilter === 'All' || p.category === activeFilter);
+    const filtered = projects.filter(p => activeFilter === 'All' || p.category.includes(activeFilter));
     const displayed = showAll ? filtered : filtered.slice(0, INITIAL_COUNT);
     const hasMore = !showAll && filtered.length > INITIAL_COUNT;
 
